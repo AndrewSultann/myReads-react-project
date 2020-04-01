@@ -1,0 +1,40 @@
+0) Install 'react-router-dom' & Import & wrap <App/> with <BrowserRouter>
+
+1) Make Component Hierarchy: -To know what should be a component follow "single responsibility principle"
+-App
+-BookList
+ -Bookshelves
+  -Bookshelf
+   -Book
+   -Bookshelf Changer
+ -Add Book Button
+
+ -Search Page
+  -Search Bar
+  -Search Results
+   -Book
+    -Book Options
+
+2) Build a static version: Split the UI into BookList & BookSearch
+**Use route instead of state & Use <Link> instead of "a tags or buttons"  and take care of button styles
+
+
+3) Determine the data in app:
+    a) Books =>  state***
+    b) Bookshelves =>  not state
+       Bookshelf => not state
+    c) Book => not state
+    d) Bookshelf Changer => state***
+    e) AddButton => not state
+    f) Search Input => state***
+
+
+4) Identify where state should live
+
+Books => {BookList & Bookshelves & Book }  -Will live in {BookList}
+
+Bookshelf Changer => {Bookshelves}
+
+Search input => {SearchBar}
+
+5) USE BookAPI.getAll(): to get all books in the App, and make an array of objects for bookshelves
